@@ -26,3 +26,5 @@ EXPOSE 5000
 ENTRYPOINT ["python", "main.py"]
 
 RUN echo $(ls build)
+RUN echo $(ls)
+
