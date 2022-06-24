@@ -24,6 +24,3 @@ EXPOSE 5000
 
 # Run main.py when the container launches.
 ENTRYPOINT ["python", "main.py"]
-
-WORKDIR /build
-RUN echo $(ls)
