@@ -13,7 +13,9 @@ WORKDIR /app
 # Copy files from the current directory into the container's /app directory.
 COPY ./requirements.txt /app
 RUN mkdir /build
-ADD  /build /app/build
+WORKDIR /build
+ADD  /build /build
+WORKDIR /app
 COPY ${PYTHON_MAIN_FILE} /app/main.py
 
 RUN echo $(ls)
