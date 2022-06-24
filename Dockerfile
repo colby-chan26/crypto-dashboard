@@ -12,10 +12,7 @@ WORKDIR /app
 # Port issues
 # Copy files from the current directory into the container's /app directory.
 COPY ./requirements.txt /app
-RUN mkdir /build
-WORKDIR /build
-ADD  /build /build
-WORKDIR /app
+COPY  /build /build
 COPY ${PYTHON_MAIN_FILE} /app/main.py
 
 RUN echo $(ls)
