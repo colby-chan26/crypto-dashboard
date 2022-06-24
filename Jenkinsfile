@@ -1,33 +1,24 @@
-pipeline {
-    agent {
-        docker {
-            image 'node:16-alpine'
-            args '-p 3000:3000'
-        }
-    }
-     environment {
-            CI = 'true'
-        }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        // stage('Test') {
-        //             steps {
-        //                 // sh './jenkins/scripts/test.sh'
-        //                 sh 'npm test'
-        //             }
-        //         }
-        stage('Deliver') {
-                    steps {
-                        // sh './jenkins/scripts/deliver.sh'
-                        // input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                        // sh './jenkins/scripts/kill.sh'
-                        sh 'npm start'
-                    }
-                }
+def projectName = 'finance-app'
+def version = "0.0.${currentBuild.number}"
+def dockerImageTag = "${projectName}:${version}"
 
+pipeline {
+  agent any
+  stages {
+    stage('Build Container') {
+      steps {
+        sh "docker build -t ${dockerImageTag} --build-arg PYTHON_MAIN_FILE=server.py ."
+      }
     }
+
+    stage('Deploy Container To Openshift') {
+      steps {
+        sh "oc login https://localhost:8443 --username admin --password admin --insecure-skip-tls-verify=true"
+        sh "oc project ${projectName} || oc new-project ${projectName}"
+        sh "oc delete all --selector app=${projectName} || echo 'Unable to delete all previous openshift resources'"
+        sh "oc new-app ${dockerImageTag} -l version=${version}"
+        sh "oc expose svc/${projectName}"
+      }
+    }
+  }
 }
