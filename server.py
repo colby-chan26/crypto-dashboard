@@ -19,7 +19,7 @@ def getCryptoCurrency():
     return jsonify(dict)
 
 @app.route('/getInfoExchange', methods=['GET'])
-def getCryptoCurrency():
+def getCryptoExchange():
     url = "https://api.coingecko.com/api/v3/exchanges?per_page=250"
 
     response = urllib.request.urlopen(url)
