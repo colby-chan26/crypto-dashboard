@@ -53,7 +53,7 @@ function App() {
       </div>
       {searchMode === 'currency' ? <>
       <div className='coin-search'>
-        <h1 className='coin-text'> Search a currency</h1>
+        <h1 className='coin-text'> Search a currenc</h1>
         <form>
           <input type="text" placeholder="Search" className="coin-input" onChange={handleChange} />
         </form>
