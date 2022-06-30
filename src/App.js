@@ -53,7 +53,7 @@ function App() {
       </div>
       {searchMode === 'currency' ? <>
       <div className='coin-search'>
-        <h1 className='coin-text'> Search a curren</h1>
+        <h1 className='coin-text'> console.log('Search a currency')</h1>
         <form>
           <input type="text" placeholder="Search" className="coin-input" onChange={handleChange} />
         </form>
@@ -67,7 +67,7 @@ function App() {
       })}
       </> : <>
       <div className='coin-search'>
-        <h1 className='coin-text'> Search an Exchange</h1>
+        <h1 className='coin-text'> console.log('Search an Exchange')</h1>
         <form>
           <input type="text" placeholder="Search" className="coin-input" onChange={handleChange} />
         </form>
