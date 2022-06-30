@@ -27,6 +27,7 @@ function App() {
       res => {
         setExchanges(res.data);
         console.log(res.data)
+        console.log('hello');
       }).catch(error => console.log(error));
   }, []);
 
