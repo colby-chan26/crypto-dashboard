@@ -75,8 +75,6 @@
   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
   text-align:center;
   transition: all 0.2s;
-  margin-left: 20px;
-  margin-bottom: 20px;
   
   }
   .button3{
@@ -106,6 +104,5 @@
 @media all and (max-width:30em){
   .button4{
   display:block;
-  margin:0.2em auto;
   }
 }
