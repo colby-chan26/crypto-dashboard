@@ -1,23 +1,26 @@
 .coin-container {
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
 
 .coin-row {
-  display: flex;
-  flex-direction: row;
   justify-content: start;
   align-items: center;
   height: 80px;
   border-bottom: 1px solid #d7d7d7;
-  width: 900px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 20px;
+  
+
 }
 
 .coin {
   display: flex;
   align-items: center;
-  padding-right: 24px;
-
+  padding-right: 15px;
   min-width: 300px;
 }
 
@@ -29,7 +32,7 @@
 .coin img {
   height: 30px;
   width: 30px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .coin-symbol {
@@ -41,6 +44,7 @@
   text-align: right;
   justify-content: space-between;
   width: 100%;
+
 }
 
 .coin-price {
@@ -66,3 +70,18 @@
 .green {
   color: #11d811;
 }
+@media only screen and (min-width: 800px) {
+  .coin-row {
+    justify-content: start;
+    align-items: center;
+    height: 80px;
+    display: grid;
+    align-items: center;
+    border-bottom: 1px solid #d7d7d7;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 20px;
+    width: 800px;
+  
+  }
+}
+

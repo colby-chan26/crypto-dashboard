@@ -6,7 +6,7 @@ const exchange = ({name, image, country, year_established, trust_score, url}
 ) => {
     return (
         <div className='coin-container'>
-            <div className='coin-row'>
+            <div className='coin-row' >
                 <div className='coin'>
                     <img src={image} alt="cryptoimage" />
                     <h1>{name}</h1>

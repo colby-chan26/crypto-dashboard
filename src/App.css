@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #302B30;
   color: #fff;
+
 }
 
 .coin-app {
@@ -15,7 +15,9 @@
   align-items: center;
   margin-top: 64px;
   color: #fff;
+  
 }
+
 
 .coin-search {
   margin-bottom: 64px;
@@ -29,6 +31,7 @@
 .coin-text {
   margin-bottom: 32px;
   text-align: center;
+  padding: 10px;
 }
 
 .coin-input {
@@ -54,13 +57,14 @@
 .button-container {
   display: flex;
   justify-content: space-between;
+
 }
 
 .button4{
   display:inline-block;
   padding:0.3em 1.2em;
   margin:0 0.2em 0.2em 0;
-  border:0.16em solid rgba(255,255,255,0);
+
   border-radius:2em;
   box-sizing: border-box;
   text-decoration:none;
@@ -71,7 +75,29 @@
   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
   text-align:center;
   transition: all 0.2s;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  
   }
+  .button3{
+    display:inline-block;
+    padding:10px;
+    margin:0 0.2em 0.2em 0;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    font-size: 20px;
+    color:#FFFFFF;
+    background-color: black;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    }
 
 .button4:hover{
   border-color: rgba(255,255,255,1);
