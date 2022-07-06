@@ -15,7 +15,6 @@ COPY ./requirements.txt /app
 COPY  /build /app/build
 COPY ${PYTHON_MAIN_FILE} /app/main.py
 
-RUN echo $(ls)
 # Install any needed packages specified in requirements.txt.
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
@@ -25,6 +24,4 @@ EXPOSE 5000
 # Run main.py when the container launches.
 ENTRYPOINT ["python", "main.py"]
 
-RUN echo $(ls build)
-RUN echo $(ls)
 
